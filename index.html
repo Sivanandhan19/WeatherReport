@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App - JavaScript</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+  <!-- chartjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
+  <!-- fontawesome -->
+  <script src="https://use.fontawesome.com/6ae925acf3.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- mapquest -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- bootstrap jquery script -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- js file -->
+
+  <!-- local css file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="input">
+    <input type="text" name="city" autocomplete="off" class="form-control" id="city" placeholder="CITY NAME"><br>
+    <button class="btn btn-primary" onclick="get(document.getElementById('city').value)">FIND WEATHER</button>
+  </div>
+  <div class="card">
+    <div class="title">
+      <p>WEATHER</p>
+    </div>
+    <div class="notification"></div>
+    <div class="weather-card">
+      <div class="weather-icon">
+        <img src="icons/unknown.png" alt="">
+      </div>
+      <div class="temperature-value design">
+        <p>- °<span>C</span></p>
+      </div>
+      <div class="temperature-description design">
+        <p>-</p>
+      </div>
+      <div class="humidity-value design">
+        <p>-</p>
+      </div>
+      <div class="pressure-value design">
+        <p>-</p>
+      </div>
+      <div class="wind-value design">
+        <p>-</p>
+      </div>
+      <div class="date-value design">
+        <p>-</p>
+      </div>
+      <div class="location design">
+        <p>-</p>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="arrow bounce">
+    <i class="fa fa-angle-double-down fa-5x"></i>
+  </div> -->
+  <hr>
+  <h1 class="forecast-heading">WEATHER FORECAST FOR NEXT 7 DAYS</h1>
+  <h2 class="forecast-heading">TEMPERATURE</h2>
+  <div class="chart-card">
+      <canvas id="Tchart"></canvas>
+  </div>
+  <h2 class="forecast-heading">HUMIDITY</h2>
+  <div class="chart-card">
+      <canvas id="Hchart"></canvas>
+  </div>
+  <h2 class="forecast-heading">PRESSURE</h2>
+  <div class="chart-card">
+      <canvas id="Pchart"></canvas>
+  </div>
+  <h2 class="forecast-heading">WIND SPEED</h2>
+  <div class="chart-card">
+      <canvas id="Wchart"></canvas>
+  </div>
+  <br><br><br><br>
+  <script type='text/javascript' src='config.js'></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
